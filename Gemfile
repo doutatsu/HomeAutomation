@@ -31,23 +31,13 @@ group :test do
   # gem 'rack-test'
   # gem 'guard-rspec'         # Automathic rspec run
   # gem 'vcr'                 # For speeding up external API testing
-  # gem 'webmock'           # Library for stubbing and setting expectations on HTTP requests
+  # gem 'webmock'             # Library for stubbing and setting expectations on HTTP requests
 end
 group :test, :development do
 #   gem 'jasmine-rails'
 #   gem 'guard-jshint-on-rails'
 #   gem 'jshint_on_rails'
 end
-
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+# GPIO programming for Pi
+gem 'pi_piper'  
+# gem 'wiringpi'
