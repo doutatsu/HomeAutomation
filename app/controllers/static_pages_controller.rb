@@ -3,14 +3,13 @@ include PiPiper
 
 class StaticPagesController < ApplicationController
   def index
-    sensor_status = false
+   @sensor_status = 'hi'
     
-    if :pin => 17, :goes => :high do
-      sensor_status = true
-    else
-      sensor_status = false
+    watch :pin => 17, :goes => :high do
+      @sensor_status = true
     end
   end
+
   def settings
   end
 end
