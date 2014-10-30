@@ -1,5 +1,9 @@
+require 'API/pinWatcher'
+
+include PinWatcher
 class StaticPagesController < ApplicationController
   def index
+    @@sensor = PinWatcher::Sensor.new
   end
 
   def settings

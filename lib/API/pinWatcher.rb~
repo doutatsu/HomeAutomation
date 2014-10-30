@@ -4,12 +4,12 @@
 module PinWatcher
   class Sensor
     def initialize
-      @@status = false
+      @@sensorStatus = false
       pinJob
     end
 
     def status
-      if @@status == true
+      if @@sensorStatus == true
         return 'online'
       else
         return 'offline'
@@ -18,7 +18,7 @@ module PinWatcher
 
     def pinJob
         watch :pin => 17, :goes => :high do
-          @@status = true
+          @@sensorStatus = true
         end
     end
   end
