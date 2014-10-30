@@ -21,8 +21,8 @@ gem 'jbuilder', '~> 1.2'
 # Server stuff
 gem 'thin'
 # Hardware gems
- gem 'pi_piper'
- gem 'wiringpi'
+# gem 'pi_piper'
+# gem 'wiringpi'
 
 # Testing gems
 gem "rspec-rails", :group => [:test, :development]
