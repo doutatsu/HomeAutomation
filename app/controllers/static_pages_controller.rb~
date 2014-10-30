@@ -1,0 +1,12 @@
+require 'API/pinWatcher'
+include PinWatcher
+class StaticPagesController < ApplicationController
+  def index
+        watch :pin => 17, :goes => :high do
+          puts'hello'
+        end
+  end
+
+  def settings
+  end
+end

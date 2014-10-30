@@ -10,7 +10,7 @@ module PinWatcher
       @status = status
     end
 
-    def status
+    def self.status
       return @status
     end
   end
