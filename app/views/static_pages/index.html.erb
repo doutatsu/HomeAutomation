@@ -2,11 +2,19 @@
   <h1>Welcome to your Dashboard</h1>
     <div class='row'>
       <div class='col-md-6'>
-        <h2>Devices</h2>
-        <span>Sensor 1</span> <%= $sensor.status %><br>
+        <h2>
+          Devices
+          <button type="button" class="btn btn-default btn-circle btn-sm glyphicon glyphicon-plus">
+          </button>
+        </h2>
+        <span>Sensor 1</span> <%= true == true ? tag("div", class: ('circle online')) : tag("div", class:('circle offline')) %>
       </div>
-      <div class='col-md-6 col-lg-6'>
-        <h2>Event History</h2>
-      </div>
+    </div>
+    <div class='col-md-6'>
+      <h2>
+        Event History
+        <button type="button" class="btn btn-default btn-circle btn-sm glyphicon glyphicon-plus">
+        </button>
+      </h2>
     </div>
 </div>

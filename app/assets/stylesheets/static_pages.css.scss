@@ -15,3 +15,25 @@ textarea { resize: vertical; }
   border-radius: 0px;
   h1{ margin-bottom: 10px; }
 }
+
+.circle { 
+   width: 10px;
+   height: 10px;
+   display: inline-block;
+   margin-left: 10px;
+   -moz-border-radius: 70px; 
+   -webkit-border-radius: 70px; 
+   border-radius: 70px;
+}
+.online   { background: green; }
+.offline  { background: red;   }
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 2px 1px 1.5px 2px;  
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}

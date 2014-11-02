@@ -3,9 +3,11 @@
 
 module PinWatcher
   class Sensor
+    
     def initialize
       @status = false
     end
+
     def status=(status)
       @status = status
     end
