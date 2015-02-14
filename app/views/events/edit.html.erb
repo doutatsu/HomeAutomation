@@ -1,0 +1,13 @@
+<%= form_for @event do |e| %>
+  <!-- Event Name -->
+  <%= e.text_field :name, {class: "form-control", placeholder: "Enter event name"} %>
+  <!-- Trigger Device -->
+  <%= e.select(:trigger_device, options_from_collection_for_select(Device.all, "name", "name", @event.trigger_device), {}, {class: 'form-control'}) %>
+  <!-- Trigger Device Status -->
+  <%= e.select(:trigger_device_status, options_for_select([ "On", "Off" ], @event.trigger_device_status), {}, {class: 'form-control'}) %>
+  <!-- Affected Device -->
+  <%= e.select(:affected_device, options_from_collection_for_select(Device.all, "name", "name", @event.affected_device), {}, {class: 'form-control'}) %>
+  <!-- Affected Device Status -->
+  <%= e.select(:affected_device_status, options_for_select([ "On", "Off" ], @event.affected_device_status), {}, {class: 'form-control'}) %>
+  <%= e.submit %>
+<% end %>

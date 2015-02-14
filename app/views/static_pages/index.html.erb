@@ -4,22 +4,21 @@
     <div class="panel panel-info col-md-6" style="padding: 0;">
       <div class="panel-heading">
         <h3 class="panel-title">Devices
-        <span class="badge" style="float: right;">+</span>
         </h3>
       </div>
       <div class="panel-body" style="text-align: left;">
         <ul class="list-group">
           <li class="list-group-item">  
             Sensor 1
-            <div class="circle offline badge"></div>
+            <div class="circle status offline badge"></div>
           </li>
           <li class="list-group-item">
             Sensor 2
-             <div class="circle online badge"></div>
+             <div class="circle status online badge"></div>
           </li>
           <li class="list-group-item">
             Kitchen lights
-            <div class="circle online badge"></div>
+            <div class="circle status online badge"></div>
           </li>
         </ul>              
       </div>
@@ -27,25 +26,27 @@
     <div class="panel panel-info col-md-6" style="padding: 0;">
       <div class="panel-heading">
         <h3 class="panel-title">Event History
-        <span class="badge" style="float: right;">+</span>
         </h3>
+        <%= link_to "+", new_event_path, class: 'btn btn-primary btn-xs circle' %>
       </div>
-      <div class="panel-body" style="text-align: left;">
+      <div class="panel-body" style="text-align: left">
         <ul class="list-group">
-          <li class="list-group-item">
-            <span class="badge">18:30</span>
-            Kitchen lights switched on
-          </li>
-          <li class="list-group-item">
-            <span class="badge">18:27</span>
-            Sensor 1 went online
-          </li>
-          <li class="list-group-item">
-            <span class="badge">18:00</span>
-            Sensor 1 went offline
-          </li>
+          <% @events.each do |event| %>
+            <li class="list-group-item">
+              <span>When </span><%= event.trigger_device %><span> is </span><%= event.trigger_device_status %><span> turn </span><%= event.affected_device %><span>  </span><%= event.affected_device_status %>
+              <%= link_to "", event, method: :delete,
+                                       data: { confirm: "You sure?" }, class: 'fa fa-trash-o' %>
+              <%= link_to "", edit_event_path(event), class: 'fa fa-pencil' %>
+
+              <!-- <i class="fa fa-pencil" data-toggle="modal" data-target="#updateEventModal"></i> -->
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
   </div>
+
+  <!-- Modal -->
+  <%= render 'newEventModal.html.erb' %>
+  <%= render 'updateEventModal.html.erb' %>
 </div>

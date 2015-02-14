@@ -17,17 +17,19 @@ textarea { resize: vertical; }
 }
 
 .circle { 
-   width: 10px;
-   height: 10px;
-   display: inline-block !important;
-   margin-left: 10px;
-   -moz-border-radius: 70px; 
-   -webkit-border-radius: 70px; 
-   border-radius: 70px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
+}
+.status{
+  display: block !important;
+  width: 12px;
+  height: 10px;
 }
 .online   { background: green; }
-.offline  { background: red;   }
-
+.offline  { background: red; }
 .btn-circle {
   width: 30px;
   height: 30px;
@@ -38,10 +40,34 @@ textarea { resize: vertical; }
   border-radius: 15px;
 }
 
-.list-group-item{
-  border: none !important;
+.list-group-item{ border: none !important; }
+.form-control{
+  display: inline-block;
+  width: inherit;
 }
-
-.panel-title{
+.fa{ float: right; }
+.fa-pencil{}
+.fa-trash-o{
+  margin-left: 20px;
+  color: red;
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
+.panel-heading{
   text-align: left;
+  a {
+    position: absolute !important;
+    top: 4px !important;
+    right: 10px !important;
+    width: 30px;
+    height: 30px;
+  }
+}
+.modal{
+  .modal-header{
+    background-color: #d9edf7;
+    color: #31708f;
+  }
+  .modal-content{ border-color: #bce8f1; }
 }

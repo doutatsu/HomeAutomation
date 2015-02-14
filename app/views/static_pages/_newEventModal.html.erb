@@ -1,0 +1,28 @@
+<div class="modal fade" id="newEventModal" tabindex="-1" role="dialog" aria-labelledby="newEventModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="newEventModalLabel">New Event</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag('/events', method: "post", id: "new-event", remote: "true") do -%>
+          <!-- Event Name -->
+          <%= text_field_tag(:name, nil, {id: "email", class: "form-control", placeholder: "Enter event name"}) %>
+          <!-- Trigger Device -->
+          <%= select_tag "td", options_from_collection_for_select(Device.all, "name", "name"), class: 'form-control' %>
+          <!-- Trigger Device Status -->
+          <%= select_tag "tds", "<option>On</option><option>Off</option>".html_safe, class: 'form-control' %>
+          <!-- Affected Device -->
+          <%= select_tag "ad", options_from_collection_for_select(Device.all, "name", "name"), class: 'form-control' %>
+          <!-- Affected Device Status -->
+          <%= select_tag "ads", "<option>On</option><option>Off</option>".html_safe, class: 'form-control' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= submit_tag("Create", class: 'btn btn-primary') %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
