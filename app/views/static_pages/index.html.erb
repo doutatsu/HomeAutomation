@@ -8,19 +8,10 @@
       </div>
       <div class="panel-body" style="text-align: left;">
         <ul class="list-group">
-          <li class="list-group-item">  
-            Sensor 1
-            <div class="circle status offline badge"></div>
-          </li>
-          <li class="list-group-item">
-            Sensor 2
-             <div class="circle status online badge"></div>
-          </li>
-          <li class="list-group-item">
-            Kitchen lights
-            <div class="circle status online badge"></div>
-          </li>
-        </ul>              
+          <% @devices.each do |device| %>
+            <li class="list-group-item"><%= device.name %></li>
+          <% end %>
+        </ul>             
       </div>
     </div>
     <div class="panel panel-info col-md-6" style="padding: 0;">
