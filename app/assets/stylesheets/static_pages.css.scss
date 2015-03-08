@@ -16,6 +16,12 @@ textarea { resize: vertical; }
   h1{ margin-bottom: 10px; }
 }
 
+li{
+  font-size: 20px;
+}
+.bootstrap-switch{
+  float: right;
+}
 .circle { 
   text-align: center;
   padding: 6px 0;
@@ -64,10 +70,17 @@ a:hover, a:focus {
     height: 30px;
   }
 }
+.switches{
+  float: right;
+}
 .modal{
   .modal-header{
     background-color: #d9edf7;
     color: #31708f;
   }
   .modal-content{ border-color: #bce8f1; }
+}
+/* show the move cursor as the user moves the mouse over the panel header.*/
+#draggablePanelList .alert {
+    cursor: move;
 }

@@ -4,31 +4,41 @@
     <div class="panel panel-info col-md-6" style="padding: 0;">
       <div class="panel-heading">
         <h3 class="panel-title">Devices
+          <i class="fa fa-refresh"></i>
         </h3>
       </div>
       <div class="panel-body" style="text-align: left;">
         <ul class="list-group">
           <% @devices.each do |device| %>
-            <li class="list-group-item"><%= device.name %></li>
+            <li class="list-group-item"><%= device.name %>
+              <input class="switches" type="checkbox" name="my-checkbox" unchecked>
+            </li>
           <% end %>
         </ul>             
       </div>
     </div>
     <div class="panel panel-info col-md-6" style="padding: 0;">
       <div class="panel-heading">
-        <h3 class="panel-title">Event History
+        <h3 class="panel-title">Events
+          <%= link_to "", new_event_path, class: 'fa fa-plus', style:'position: inherit !important; width: inherit' %>
+          <i class="fa fa-inbox" style='margin-right:10px;'></i>
         </h3>
-        <%= link_to "+", new_event_path, class: 'btn btn-primary btn-xs circle' %>
       </div>
-      <div class="panel-body" style="text-align: left">
-        <ul class="list-group">
+      <div id="events" class="panel-body" style="text-align: left">
+        <ul id="draggablePanelList" class="list-group" style="list-style: none">
           <% @events.each do |event| %>
-            <li class="list-group-item">
-              <span>When </span><%= event.trigger_device %><span> is </span><%= event.trigger_device_status %><span> turn </span><%= event.affected_device %><span>  </span><%= event.affected_device_status %>
+            <li class="alert alert-info" data-event-id=<%= "#{event.id}" %>
+              <% if event.time.nil? != true && event.affected_device.nil? != true  %>
+                <span>When </span><%= event.trigger_device %><span> is </span><%= event.trigger_device_status %><span> turn </span><%= event.affected_device %><span>  </span><%= event.affected_device_status %><span> at </span><%= event.time.strftime("%I:%M  %p") %>
+              <% elsif event.time.nil? != true %>
+                
+                  <span>Turn </span><%= event.trigger_device %> <%= event.trigger_device_status %><span> at </span><%= event.time.strftime("%I:%M %p") %>
+              <% else %>
+                <span>When </span><%= event.trigger_device %><span> is </span><%= event.trigger_device_status %><span> turn </span><%= event.affected_device %><span>  </span><%= event.affected_device_status %>
+              <% end %>
               <%= link_to "", event, method: :delete,
                                        data: { confirm: "You sure?" }, class: 'fa fa-trash-o' %>
               <%= link_to "", edit_event_path(event), class: 'fa fa-pencil' %>
-
               <!-- <i class="fa fa-pencil" data-toggle="modal" data-target="#updateEventModal"></i> -->
             </li>
           <% end %>

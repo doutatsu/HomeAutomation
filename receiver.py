@@ -6,10 +6,10 @@ import requests
 from threading import Thread
 from time import sleep
 
-class MyClass(object):
+class HW_Control(object):
   @staticmethod
   def main():
-    MyClass.send_status("Sensor", "1")
+    HW_Control.send_status("Sensor", "1")
   # Send device status to the web app
   @staticmethod
   def send_status(device,status):
@@ -67,6 +67,6 @@ class MyClass(object):
           if data.startswith("BUTTONAOF"):
             print “Motion detector reset”                            
         sleep(0.2)
-MyClass.main()
+HW_Control.main()
 
 

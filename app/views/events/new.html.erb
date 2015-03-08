@@ -1,13 +1,10 @@
 <%= form_for @event do |e| %>
-  <!-- Event Name -->
-  <%= e.text_field :name, {id: "email", class: "form-control", placeholder: "Enter event name"} %>
   <!-- Trigger Device -->
   <%= e.select(:trigger_device, options_from_collection_for_select(Device.all, "name", "name"), {}, {class: 'form-control'}) %>
   <!-- Trigger Device Status -->
   <%= e.select(:trigger_device_status, options_for_select([ "On", "Off" ]), {}, {class: 'form-control'}) %>
-  <!-- Affected Device -->
-  <%= e.select(:affected_device, options_from_collection_for_select(Device.all, "name", "name"), {}, {class: 'form-control'}) %>
-  <!-- Affected Device Status -->
-  <%= e.select(:affected_device_status, options_for_select([ "On", "Off" ]), {}, {class: 'form-control'}) %>
-  <%= e.submit %>
+
+  <button type="button" class="btn btn-default" id='new_device'>+ Add Device</button>
+  <button type="button" class="btn btn-default" id='add_time'>+ Add Time</button>
+  <%= e.submit 'Create Event', :class => 'btn btn-default disabled', :id => 'create_event' %>
 <% end %>

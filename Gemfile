@@ -8,22 +8,29 @@ gem 'pg'
 
 # Assets
 gem 'sass-rails', '~> 4.0.0'     # Use SCSS for stylesheets
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.2.0' # SASS tailored Bootstrap
 gem 'autoprefixer-rails'         # browser vendor prefixes automatically
 gem 'uglifier', '>= 1.3.0'       # Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails', '~> 4.0.0'   # Use CoffeeScript for .js.coffee assets and views
 gem 'jquery-rails'               # Use jquery as the JavaScript library
 gem 'turbolinks'                 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem "font-awesome-rails"
+gem 'jquery-turbolinks'          # Makes turbolinks with JS work
+gem 'font-awesome-rails'         # Font Awesome Icons for Rails
+gem 'bootstrap-switch-rails'     # Bootstrap Switch tailored for Rails
+gem 'bootstrap-timepicker-rails' # Makes turbolinks with JS work
+gem 'jquery-ui-rails'            # JQuery UI for Rails (Scrollable, etc.)
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
 # Server stuff
 gem 'thin'
-# Hardware gems
- # gem 'pi_piper'
- # gem 'wiringpi'
+gem 'sidekiq' # Background jobs => Event handeling
+# gem 'redis-rb' # Redis Queue => Holding jobs
+
+# Database stuff
+gem 'ranked-model' # Row sorting library
+ 
 
 # Testing gems
 gem "rspec-rails", :group => [:test, :development]

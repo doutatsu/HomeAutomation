@@ -11,7 +11,10 @@
  *= require_self
  *= require_tree .
  *= require font-awesome
+ *= require jquery-ui
  */
+@import "bootstrap3-switch";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-timepicker";
 

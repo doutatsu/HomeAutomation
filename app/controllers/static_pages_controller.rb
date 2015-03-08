@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def index
-    @events  = Event.all
+    @events = Event.rank(:row_order).all
     @devices = Device.all
   end
 

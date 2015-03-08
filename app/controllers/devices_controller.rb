@@ -22,6 +22,17 @@ class DevicesController < ApplicationController
     end
   end
 
+  def switch
+    uri = URI('http://192.168.1.76:80/switch')
+    @device = Device.find(params[:id])
+    unless params[:status].nil?
+      puts "Switching #{params[:status]}"
+      response = Net::HTTP.post_form(uri, 'status' => params[:status])
+      puts response.body
+    end
+    redirect_to :root
+  end
+
   private
 
     def device_params

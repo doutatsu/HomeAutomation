@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require bootstrap-switch
+//= require bootstrap-timepicker
+//= require jquery.turbolinks
 //= require_tree .
-
-$("[name='my-checkbox']").bootstrapSwitch();
